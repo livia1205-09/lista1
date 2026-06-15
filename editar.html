@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Editar Contato</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+            Agenda
+        </div>
+
+        <div class="menu">
+
+            <a href="/"> Início</a>
+
+            <a href="/cadastrar">
+                 Cadastrar Contato
+            </a>
+
+            <a href="/listar">
+                 Contatos
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <h1>Editar Contato</h1>
+
+        <form method="POST" class="formulario">
+
+            <input type="text"
+            name="nome"
+            value="{{ contato.nome }}"
+            required>
+
+            <input type="text"
+            name="telefone"
+            value="{{ contato.telefone }}"
+            required
+            minlength="11"
+            maxlength="11"
+            pattern="[0-9]{11}"
+            title="Digite exatamente 11 números com DDD">
+
+            <input type="email"
+            name="email"
+            value="{{ contato.email }}"
+            required>
+
+            <button type="submit" class="botao">
+                Salvar Alterações
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

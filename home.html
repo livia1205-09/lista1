@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Agenda de Contatos</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+            Agenda
+        </div>
+
+        <div class="menu">
+
+            <a href="/"> Início</a>
+
+            <a href="/cadastrar">
+                 Cadastrar Contato
+            </a>
+
+            <a href="/listar">
+                 Contatos
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <h1>Agenda de Contatos</h1>
+
+        <p>
+            Organize seus contatos de forma simples,
+            rápida e moderna.
+        </p>
+
+        <br><br>
+
+        <a href="/cadastrar" class="botao">
+            Novo Contato
+        </a>
+
+    </div>
+
+</body>
+</html>

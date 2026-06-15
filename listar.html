@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Contatos</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+            Agenda
+        </div>
+
+        <div class="menu">
+
+            <a href="/"> Início</a>
+
+            <a href="/cadastrar">
+                 Cadastrar Contato
+            </a>
+
+            <a href="/listar">
+                 Contatos
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <h1>Contatos</h1>
+
+        <br>
+
+        <a href="/cadastrar" class="botao">
+            + Novo Contato
+        </a>
+
+        <br><br><br>
+
+        <div class="contatos">
+
+            {% for contato in contatos %}
+
+            <div class="card">
+
+                <div class="info">
+
+                    <h3>{{ contato.nome }}</h3>
+
+                    <p>
+                         {{ contato.telefone }}
+                    </p>
+
+                    <p>
+                         {{ contato.email }}
+                    </p>
+
+                </div>
+
+                <div class="acoes">
+
+                    <a href="/editar/{{ loop.index0 }}"
+                    class="botao editar">
+                        Editar
+                    </a>
+
+                    <a href="/remover/{{ loop.index0 }}"
+                    class="botao remover">
+                        Excluir
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>
